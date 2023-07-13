@@ -27,6 +27,14 @@ class SharesController < ApplicationController
     end
   end
 
+  def create_subscription
+    @subscription = Subscription.new(subscription_params)
+    if @subscription.save
+      json_response(@subscription)
+    else
+      json_error_response(@subscription.errors)
+    end
+  end
 
   private
     def set_share
@@ -35,5 +43,9 @@ class SharesController < ApplicationController
 
     def share_params
       params.require(:share).permit(:name, :symbol, :price)
+    end
+
+    def subscription_params
+      params.require(:subscription).permit(:callback_url, :api_key)
     end
 end
