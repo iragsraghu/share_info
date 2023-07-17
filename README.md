@@ -80,6 +80,10 @@ Application also triggers if any new shares is been added or updated to the Watc
 
     - bundle install
 
+    - create config/database.yml
+    
+    - ask for master.key
+    
     - rake db:create
 
     - rake db:migrate
