@@ -1,0 +1,6 @@
+# Configuration
+development:
+  adapter: mysql2
+  username: root
+  password: password
+  database: share_info_dev
